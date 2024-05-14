@@ -60,11 +60,16 @@ console.log('test')
 // let values = Object.values(obj)
 // console.log(values)
 
-// let arr = [
-//     {name: 'Jason' , age: 35},   // 0
-//     {name: 'Tom', age: 25, wife: true}  // 1
-// ]
-//
+let arr = [
+    {name: 'Jason' , age: 35},   // 0
+    {name: 'Tom', age: 25, wife: true}  // 1
+]
+
+console.log(arr[1])
+
+console.log(`Мене звати ${arr[1].name} мені ${arr[1].age} років ,та у мене є дружина ${arr[1].wife}`)
+
+
 // let array  = {name: 'Ivan'}
 // // console.log(arr[0].name)
 // // console.log(arr[1].age, arr[1].wife)
@@ -86,5 +91,6 @@ const temp = [
     }
 ];
 console.log('Temp in night is ', temp[0].monday.temperature[1].value, 'gr')
+
 
 

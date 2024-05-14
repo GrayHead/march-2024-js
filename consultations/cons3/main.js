@@ -133,15 +133,18 @@ let books = [
     },
 ];
 
-// let bigBook = books[0]
+let bigBook = books[0]
 // console.log(books)
 // console.log('******')
-//
-// for (const book of books) {
-//     if(book.pageCount >bigBook.pageCount ){
-//         bigBook = book;
-//     }
-// }
+
+for (const book of books) {
+    console.log(book.pageCount)
+    if (book.pageCount > 2) {
+
+        bigBook = book;
+    }
+}
+console.log(bigBook)
 
 // console.log(bigBook)
 
@@ -168,13 +171,13 @@ let books = [
 // console.log(bigGenre)
 // console.log(genres)
 
-for (const book of books) {
-    console.log(book.title, book.genre)
-    document.write(`<hr>`)
-    for (const key in book) {
-        document.write(`<div>
-          <h2>${key} - ${book[key]}</h2>
-          
- </div>`)
-    }
-}
+// for (const book of books) {
+//     console.log(book.title, book.genre)
+//     document.write(`<hr>`)
+//     for (const key in book) {
+//         document.write(`<div>
+//           <h2>${key} - ${book[key]}</h2>
+//
+//  </div>`)
+//     }
+// }
