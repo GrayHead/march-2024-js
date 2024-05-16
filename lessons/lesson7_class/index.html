@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    // function userBuilder(id, name) {
+    //     return {id: id, name: name};
+    // }
+    //
+    // let user = userBuilder(1, 'asddsa');
+    // console.log(user)
+    //
+    //
+    // function User(id, name, wife, dogName, dogBreed) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.wife = wife;
+    //     this.dog = {name: dogName, breed: dogBreed}
+    //
+    //     this.greeting = function (msg) {
+    //         return `${msg} my name is ${this.name}`
+    //     };
+    // }
+    //
+    // let user1 = new User(1, 'asddsa', {name: 'olga'}, 'kokos', 'kokker');
+    // console.log(user1);
+    //
+    // console.log(user1 instanceof User);
+    // console.log(user instanceof User);
+    //
+    // console.log(user1.greeting('hello'));
+    // user1.work = function () {
+    //     console.log('asdgahgsdhjagsdjhgsadh');
+    // };
+    //
+    // user1.work();
+    // console.log(user1);
+
+    // class User {
+    //     constructor(id, name) {
+    //         this.id = id;
+    //         this.name = name;
+    //     }
+    //
+    //     greeting(msg) {
+    //         return `${msg} my name is ${this.name}`
+    //
+    //     }
+    // }
+    //
+    // let user = new User(1, 'basya');
+    // console.log(user);
+
+    // let date = new Date();
+    // console.log(date);
+    // date.getTime();
+
+    // let array = new Array(11, 22, 33);
+    // console.log(array);
+    // let string = new String('okten');
+    // console.log(string);
+
+    // Array.prototype.xxx = 100500;
+    // Array.prototype.print = function () {
+    //     console.log(this);
+    // };
+    //
+    // let arr = [11, 22, 33];
+    // console.log(arr.xxx);
+    //
+    // arr.print();
+    //
+    // Array.prototype.myFilter = function (callback) {
+    //
+    //     let arr = [];
+    //     for (const item of this) {
+    //         if (callback(item)) {
+    //             arr.push(item);
+    //         }
+    //     }
+    //     return arr;
+    // };
+    //
+    //
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    //
+    // console.log(users.myFilter((user) => user.status));
+
+    // let set = new Set();
+    // set.add(new String('asd'));
+    // set.add(new String('asd'));
+    // set.add('asd2');
+    // set.add('asd3');
+    // set.add({});
+    // set.add({});
+    // console.log(set);
+
+
+    // let map = new Map();
+    // map.set('professor', {name: 'roman', age: 36});
+    // map.set('petya', {name: 'Sasha', age: 36});
+    // map.set('borya', {name: 'Sasha', age: 36});
+    // map.set('borya', {name: 'Sasha', age: 37});
+    //
+    // let petya = map.get('petya');
+    // console.log(petya);
+    // console.log(map);
+    //
+    // let asd = {
+    //     petya: {},
+    //     bobrya: {},
+    //     bobrya: {}
+    // }
+
+
+    let user = {
+        name: 'vasya',
+        greeting: function (msg) {
+            console.log(msg + ', my name is ' + this.name);
+        },
+    };
+
+    console.log(user);
+    user.greeting();
+
+
+    let xxx = {
+        name: 'kokos'
+    };
+
+    // user.greeting.call(xxx, 'olla');
+    // user.greeting.apply(xxx, ['olla']);
+
+    let copyGreeting = user.greeting.bind(xxx);
+
+    copyGreeting('ola');
+    copyGreeting('hello');
+
+</script>
+</body>
+</html>
