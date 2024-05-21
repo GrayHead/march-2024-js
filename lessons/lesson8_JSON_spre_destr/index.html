@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    // optional chain opertor
+    // let user = {}
+    //
+    // if (user.wife) {
+    //     console.log(user.wife.age);
+    // }
+    // console.log(user.wife?.name);
+
+    // function foobar(id, username, greeting) {
+    //     return {
+    //         id,
+    //         username,
+    //         greeting,
+    //         work () {
+    //             //.....
+    //         },
+    //
+    //     }; // {id:id,username:username : greeting : ()=>, work:func(){}// }
+    // }
+
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    //
+    // let map = users.map((user, index) => {
+    //
+    //     return {...user, id: index + 1};
+    // });
+    //
+    // console.log(users);
+    //
+    // console.log(map);
+
+
+    // let user = {
+    //     id: 1,
+    //     name: 'vasya',
+    //     wife: {
+    //         age: 2,
+    //
+    //     },
+    //     greeting() {
+    //
+    //     }
+    // }
+
+    // let userCopy = {...user, wife: {...user.wife}};
+    // console.log(user);
+    // console.log(userCopy);
+    // console.log(user === userCopy);
+    // console.log(user.wife === userCopy.wife);
+
+    // let obj = {
+    //     name: 'vsaya',
+    //     greeting() {
+    //     }
+    // };
+    // let clone = structuredClone(obj);
+    // console.log(clone === obj);
+
+    // class SomeClass {
+    //     // static foobar() {
+    //     //
+    //     // }
+    // }
+    // SomeClass.foobar();
+
+    // let s = JSON.stringify(user);
+    // console.log(s);
+    // let parse = JSON.parse(s);
+    // console.log(user);
+    // console.log(parse);
+    // console.log(user === parse);
+
+    // function cloner(obj) {
+    //     return JSON.parse(JSON.stringify(obj));
+    // }
+
+
+    // const user = {
+    //     id: 0,
+    //     name: 'default'
+    // }
+    //
+    // let copyOfUser = Object.create(user);
+    //
+    // console.log(copyOfUser);
+    // console.log(copyOfUser.id);
+    // console.log(copyOfUser.name);
+    // copyOfUser.id = 100500;
+    // console.log(copyOfUser.hasOwnProperty('id')); // true
+    // console.log(copyOfUser);
+    // console.log(copyOfUser.id);
+
+
+    // let obj = {name: 'asd'};
+    //
+    // Object.defineProperty(obj, 'id', {
+    //     value: 100500,
+    //     writable: false,
+    //     enumerable: true,
+    //     configurable: true
+    //
+    // });
+    // console.log(obj);
+    //
+    // obj.id = 200500;
+    // console.log(obj);
+    //
+    // for (const objKey in obj) {
+    //     console.log(objKey);
+    // }
+
+
+    let user = {id: 1, name: 'kokos', age: 31, wife: {name: 'asdasd'}}
+    // let {
+    //     id: userId,
+    //     name,
+    //     wife,
+    //     wife: {
+    //         name: wifeName
+    //     }
+    // } = user;
+    // // let id = user.id
+    // // console.log(id);// 1
+    // console.log(userId);// 1
+    // // console.log(surname);// undeinde
+
+    function fooo({id, name}) {
+        console.log(id, name);
+    }
+    fooo(user);
+
+    let [a, b, , d] = [11, 22, 33, 44];
+
+
+</script>
+</body>
+</html>
