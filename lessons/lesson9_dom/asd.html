@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .arget {
+            background: silver;
+        }
+
+        .user-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .target {
+
+            background: cornflowerblue;
+            font-size: 21px;
+            color: white;
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content"></div>
+
+<ul class="user-list">
+
+</ul>
+<script>
+
+    // let h2 = document.createElement('h2');
+    // h2.classList.add('arget');
+    // // h2.style.background = 'silver';
+    // h2.innerText = 'okten hello';
+    // let contents = document.getElementsByClassName('content');
+    //
+    // let contentBlock = contents[0]
+    // contentBlock.appendChild(h2);
+    // contentBlock.appendChild(h2.cloneNode(true));
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true},
+    ];
+
+
+    // let ul = document.getElementsByClassName('user-list')[0];
+    // for (const user of users) {
+    //     let li = document.createElement('li');
+    //     li.classList.add('target');
+    //     li.innerText = `name : ${user.name}, age : ${user.age}`
+    //     ul.appendChild(li);
+    // }
+
+
+    let ul = document.getElementsByClassName('user-list')[0];
+    for (const user of users) {
+        let li = document.createElement('li');
+        li.classList.add('target');
+
+        let strong1 = document.createElement('strong');
+        strong1.innerText = `username : ${user.name} `
+        let strong2 = document.createElement('strong');
+        strong2.innerText = `user age : ${user.age} `
+
+        li.append(strong1, strong2);
+
+        ul.appendChild(li);
+    }
+</script>
+
+</body>
+</html>
