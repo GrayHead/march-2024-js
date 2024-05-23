@@ -71,3 +71,15 @@ console.log('My name ' + name, country , nameStreet )
 
 
 // console.log(users)
+
+const now = new Date();
+console.log('Year:', now.getFullYear()); // Виведе: 2024
+console.log('Month:', now.getMonth() + 1); // Виведе: 5 (місяці нумеруються з 0, тому додаємо 1)
+console.log('Day:', now.getDate()); // Виведе: 20
+console.log('Hours:', now.getHours()); // Виведе: 12 (або інше поточне значення)
+console.log('Minutes:', now.getMinutes()); // Виведе: 34 (або інше поточне значення)
+console.log('Seconds:', now.getSeconds()); // Виведе: 56 (або інше поточне значення)
+
+const timestamp = 1716316800000; // Відповідає Mon May 20 2024 12:00:00 GMT+0000 (Coordinated Universal Time)
+const dateFromTimestamp = new Date(timestamp);
+console.log(dateFromTimestamp); // Виведе: Mon May 20 2024 12:00:00 GMT+0000 (Coordinated Universal Time)
