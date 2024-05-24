@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        button {
+            background: white;
+
+        }
+
+        .dark {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div id="target">
+    <button id="btn">click me</button>
+</div>
+
+<input type="text" id="input">
+<hr>
+
+<form action="http://asdasdasd.com" name="f1">
+    <input type="text" name="username">
+    <input type="text" name="surname">
+    <button>send</button>
+</form>
+
+<div>
+    <ul>
+        <li><a href="next.html">created Users</a></li>
+        <li>data</li>
+        <li>data</li>
+        <li>data</li>
+    </ul>
+
+</div>
+<script>
+
+    let btn = document.getElementById('btn');
+    let target = document.getElementById('target');
+    let input = document.getElementById('input');
+    let f1 = document.forms.f1;
+    // btn.onclick = function (e) {
+    //     // console.log(e);
+    //     // console.log(this); // e.target
+    //     e.target.classList.toggle('dark');
+    // };
+    //
+    // btn.onclick = function (e) {
+    //     console.log(e);
+    // };
+
+    // btn.addEventListener('click', function (e) {
+    //     // e.target.classList.toggle('dark');
+    //     console.log('btn');
+    // });
+    // target.addEventListener('click', function () {
+    //     console.log('div')
+    // },true);
+
+    // input.oninput = function (e) {
+    //     console.log(this.value);
+    //     // btn.style.background = this.value;
+    //
+    // };
+
+    // input.onkeydown = function (e) {
+    //     console.log(e.key);
+    // };
+
+
+    f1.onsubmit = function (e) {
+        e.preventDefault();
+        let username = f1.username.value;
+        let surname = f1.surname.value;
+        let obj = {username, surname};
+
+        let usersFromStorageArr = localStorage.getItem('users');
+        if (!usersFromStorageArr) {
+            localStorage.setItem('users', JSON.stringify([obj]));
+        }
+
+        if (usersFromStorageArr) {
+            let usersArr = JSON.parse(usersFromStorageArr);
+            usersArr.push(obj);
+            localStorage.setItem('users', JSON.stringify(usersArr));
+        }
+
+
+    };
+
+    // console.log(localStorage.getItem('asd'));
+    // console.log(localStorage.getItem('zxc'));
+    // localStorage.clear();
+
+    // document.cookie = 'name=ajdhsag';
+    // document.cookie = 'age=31';
+    // document.cookie = 'status=true';
+    // console.log(document.cookie);
+
+
+    let cookies = document.cookie.split(';');
+    let cookiesObj = {};
+    for (let i = 0; i < cookies.length; i++) {
+        let tuple = cookies[i].split('=');
+        cookiesObj[tuple[0]] = tuple[1];
+
+    }
+
+    console.log(cookiesObj);
+
+
+
+</script>
+</body>
+</html>
