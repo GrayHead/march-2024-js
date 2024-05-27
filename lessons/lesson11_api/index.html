@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="products"></div>
+
+<script>
+    let productsBlock = document.getElementsByClassName('products')[0];
+
+
+    //https://hub.com
+    //http://owu.com.ua
+
+
+    let baseUrl = 'https://dummyjson.com';
+
+
+    let getProducts = baseUrl + '/products';
+
+
+    let getProductById = (id) => getProducts + '/' + id;
+
+    let matchArray = getProducts.match(/yourRegExpHere/g);
+
+    if (matchArray || true) { // problems here with regExp match
+
+        let url = new URL(getProducts);
+        console.log(url);
+        url.searchParams.set('skip', prompt('enter skip value'));
+
+        console.log(url);
+        fetch(url)
+            .then((value) => value.json())
+            .then((response) => {
+
+
+                let products = response['products'];
+                for (const product of products) {
+                    let divProductContainer = document.createElement('div');
+
+                    let divDescription = document.createElement('div');
+                    divDescription.innerText = `${product.id} ${product.title}. ${product.price}$ `
+
+                    let divImagesContainer = document.createElement('div');
+
+                    let images = product.images;
+
+                    for (const image of images) {
+                        let productImage = document.createElement('img');
+                        productImage.src = image;
+                        divImagesContainer.appendChild(productImage);
+                    }
+
+                    divProductContainer.append(divDescription, divImagesContainer);
+
+                    productsBlock.appendChild(divProductContainer);
+
+                }
+
+
+            });
+    }
+
+
+</script>
+
+</body>
+</html>
