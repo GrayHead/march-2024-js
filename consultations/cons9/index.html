@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cons js #9</title>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<h3>Cons JS #9</h3>
+<hr>
+
+<form name="creator" class="form wrapper">
+    <label class="flex">Name:<input type="text" name="name" required></label>
+    <br/>
+    <label class="flex">SurName:<input type="text"  name="surname" required></label>
+    <br/>
+    <label class="flex">Age:<input type="number" min="10" max="100" name="age" required></label>
+    <br/>
+    <button>Send</button>
+</form>
+
+
+
+
+<hr>
+<h3>Pagination</h3>
+<div id="items-container"></div>
+<button onclick="prevPage()">Prev</button>
+<button onclick="nextPage()">Next</button>
+<hr>
+
+<h3>Counter</h3>
+<div id="counter">0</div>
+<button id="minus">Minus</button>
+<button id="plus">Plus</button>
+<button id="clear">Clear LS</button>
+<hr>
+
+<h3>Rick and Morty</h3>
+<button id="openModal">До вибраного</button>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Вподобані карточки!</p>
+        <hr>
+        <div id="like"></div>
+    </div>
+</div>
+<hr>
+
+
+<script src="main.js"></script>
+</body>
+</html>
