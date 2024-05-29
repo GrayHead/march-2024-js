@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    // async function foo() {
+    //     const users = await fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(value => value.json());
+    //
+    //     const posts = await fetch('https://jsonplaceholder.typicode.com/posts')
+    //         .then(value => value.json());
+    //
+    //     console.log(users);
+    //     console.log(posts);
+    //
+    //
+    // }
+    // foo();
+
+
+    // console.log('start');
+    //
+    // setTimeout(() => {
+    //     console.log('timeout 1');
+    // }, 1000);
+    //
+    // setTimeout(() => {
+    //     console.log('timeout 2');
+    // }, 500);
+    //
+    //
+    // console.log('end');
+
+
+    // setTimeout(() => {
+    //     console.log('timeout 1');
+    //     setTimeout(() => {
+    //         console.log('timeout 2');
+    //         setTimeout(() => {
+    //             console.log('timeout 3');
+    //             setTimeout(() => {
+    //                 console.log('timeout 3');
+    //                 setTimeout(() => {
+    //                     console.log('timeout 3');
+    //                     setTimeout(() => {
+    //                         console.log('timeout 3');
+    //                         setTimeout(() => {
+    //                             console.log('timeout 3');
+    //                             setTimeout(() => {
+    //                                 console.log('timeout 3');
+    //                                 setTimeout(() => {
+    //                                     console.log('timeout 3');
+    //
+    //                                 }, 2000);
+    //                             }, 2000);
+    //                         }, 2000);
+    //                     }, 2000);
+    //                 }, 2000);
+    //             }, 2000);
+    //         }, 2000);
+    //     }, 500);
+    //
+    // }, 1000);
+
+
+    // new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         let counter = 0;
+    //         console.log('timeout 1', counter);
+    //         if (false) {
+    //             reject('my bad'); // pass to catch
+    //         } else {
+    //             resolve(counter); //pass to next then
+    //         }
+    //     }, 1000);
+    // })
+    //     .then((counter) => {
+    //          return new Promise((resolve, reject) => {
+    //             setTimeout(() => {
+    //                 counter++; // 2
+    //                 console.log('timeout 2', counter);
+    //                 resolve(counter);
+    //             }, 2000);
+    //         });
+    //     })
+    //     .then((counter) => {
+    //         return new Promise((resolve, reject) => {
+    //             setTimeout(() => {
+    //                 counter++;
+    //                 console.log('timeout 3', counter);
+    //             }, 2000);
+    //         });
+    //     })
+    //     .catch((reason) => {
+    //         console.log(reason);
+    //
+    //     });
+
+
+    // function promiseWrap(timeout, callback) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             callback();
+    //             resolve('done');
+    //         }, timeout);
+    //     })
+    // }
+    //
+    // async function foo() {
+    //     let res1 = await promiseWrap(100, () => {
+    //         console.log('pr1');
+    //     });
+    //     let res2 = await promiseWrap(100, () => {
+    //         console.log('pr2');
+    //     });
+    //
+    //     return {
+    //         res1, res2
+    //     }
+    //
+    // }
+    //
+    // foo()
+    //     .then((x) => {
+    //         console.log(x);
+    //         x.key3 = 'okten';
+    //         return x;
+    //     })
+    //     .then((x) => {
+    //         console.log(x);
+    //     });
+
+
+    let requestAPI1 = fetch('https://jsonplaceholder.typicode.com/users')
+        .then(value => value.json());
+
+    let requestAPI2 = fetch('http://dummyjson.com/users')
+        .then(value => value.json());
+
+    // Promise.race([requestAPI2, requestAPI1])
+    //     .then(value => console.log(value));
+
+    Promise.all([requestAPI2, requestAPI1])
+        .then(value => console.log(value));
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(value => value.json())
+        .then(users => {
+            console.log(users);
+            return users;
+        })
+        .then(users => {
+            return fetch('https://jsonplaceholder.typicode.com/posts')
+
+        })
+        .then(value => value.json())
+        .then(posts => {
+
+        })
+        .then(value => {
+            return fetch('https://jsonplaceholder.typicode.com/comments')
+        })
+        .then(value => value.json())
+        .then(value => console.log(value));
+
+</script>
+
+
+</body>
+</html>
