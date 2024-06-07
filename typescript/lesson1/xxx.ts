@@ -158,6 +158,11 @@ let user2 = new User<string, string>('#$%T^YIGU&F*', 'qweqewqe');
 let user3 = new User<boolean, string>(true, 'qweqewqe');
 
 
+const foobar = <T,>(arg1: T) => {
 
+}
+
+foobar<number>(123);
+foobar<string>('asdasdasd');
 
 
