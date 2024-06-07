@@ -149,7 +149,6 @@ class User<T, X> {
         this.name = name;
     }
 
-
 }
 
 
